@@ -8,7 +8,6 @@ for a in range(11):
         for c in range(10):
             for d in range(10):
                 s.add(1001*a+101*b+11*c+2*d) # 집합 s에 생성자를 가진 정수들을 모음
-R = list(set(i for i in range(10001)).difference(s)) # 0이상 10000이하의 모든 정수 집합에서 s집합을 뺀 후(차집합), 리스트화 함
-R.sort() # 정돈된 print를 위해 오름차순 정렬함
-for r in R:
+R = set(i for i in range(10001)).difference(s) # 0이상 10000이하의 모든 정수 집합에서 s집합을 뺌(차집합)
+for r in sorted(R):
     print(r)
