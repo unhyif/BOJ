@@ -1,22 +1,7 @@
+a = "ABC DEF GHI JKL MNO PQRS TUV WXYZ".split()
 d = {}
-for i in range(65,91): # chr(65) == "A", chr(90) == "Z"
-    if i in range(65,68):
-        d[chr(i)] = 3
-    elif i in range(68,71):
-        d[chr(i)] = 4
-    elif i in range(71,74):
-        d[chr(i)] = 5
-    elif i in range(74,77):
-        d[chr(i)] = 6
-    elif i in range(77,80):
-        d[chr(i)] = 7
-    elif i in range(80,84):
-        d[chr(i)] = 8
-    elif i in range(84,87):
-        d[chr(i)] = 9
-    else:
-        d[chr(i)] = 10
-c = 0
-for s in input():
-    c += d[s]
-print(c)
+for i in range(8):
+    for s in a[i]:
+        d[s] = 3+i # 각 알파벳과 그에 대응하는 숫자로 이루어진 딕셔너리 생성
+l = [d[c] for c in input()]
+print(sum(l))
